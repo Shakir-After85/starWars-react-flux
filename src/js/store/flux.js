@@ -11,7 +11,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getCharacters: () => {
 				fetch(getStore().baseUrl + 'people')
 					.then(res => res.json())
-					.then(data => setStore({characters:data.results}))
+					.then(data => {
+						console.log(data)
+						setStore({characters:data.results})})
 					.catch(error => console.log(error));
 			},
 			addFavorites: (favorite) => {

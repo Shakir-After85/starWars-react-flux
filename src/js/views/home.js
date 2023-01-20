@@ -13,11 +13,19 @@ export const Home = () => {
 		<div className="card-group">
 	     {store.characters.map((character) => {
 			return (
-				<div className="card" key={character.uid}>
+				<div className="card m-3" key={character.uid} style={{"width": "25rem"}}> 
 		  			<img src={store.baseImgUrl + 'characters/' + character.uid + '.jpg'} className="card-img-top" alt="..."/>
 		  			<div className="card-body">
 						<h5 className="card-title">{character.name}</h5>
-						<p className="card-text"></p>
+						<div className="card-text">
+							<p>
+							Gender: {character.gender}
+							<br/>
+							Eye Color: {character.eye_color}
+							<br/>
+							Hair Color: {character.hair_color}
+							</p>
+						</div>
 					</div>
 
 					<div className="d-flex justify-content-between"> 
