@@ -13,7 +13,7 @@ export const Home = () => {
 		<div className="card-group">
 	     {store.characters.map((character) => {
 			return (
-				<div className="card m-3" key={character.uid} style={{"width": "25rem"}}> 
+				<div className="card m-3" key={character.uid} style={{"width": "40rem"}}> 
 		  			<img src={store.baseImgUrl + 'characters/' + character.uid + '.jpg'} className="card-img-top" alt="..."/>
 		  			<div className="card-body">
 						<h5 className="card-title">{character.name}</h5>

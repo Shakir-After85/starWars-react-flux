@@ -3,4 +3,5 @@
   overflow-x: scroll;
   overflow-y: hidden;
   display: flex;
+  width: 200rem;
 }
