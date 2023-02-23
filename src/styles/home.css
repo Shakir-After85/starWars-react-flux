@@ -4,4 +4,22 @@
   overflow-y: hidden;
   display: flex;
   width: 200rem;
+  
+  
+}
+.card{
+  background-color: transparent;
+  color:white;
+}
+
+.navbar {
+  font-family: 'Star Wars', sans-serif;
+  font: red;
+    
+}
+
+h1{
+  font-family: 'Star Wars', sans-serif;
+  font-size: x-large;
+  color: red;
 }

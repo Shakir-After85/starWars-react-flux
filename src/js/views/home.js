@@ -1,56 +1,138 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import { useHistory} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
-	const {store, actions} = useContext(Context)
-	const history = useHistory()
-	return(
-		<> 
-		<h1>Characters</h1>
+  const { store, actions } = useContext(Context);
 
-		<div className="card-group">
-	     {store.characters.map((character) => {
-			return (
-				<div className="card m-3" key={character.uid} style={{"width": "40rem"}}> 
-		  			<img src={store.baseImgUrl + 'characters/' + character.uid + '.jpg'} className="card-img-top" alt="..."/>
-		  			<div className="card-body">
-						<h5 className="card-title">{character.name}</h5>
-						<div className="card-text">
-							<p>
-							Gender: {character.gender}
-							<br/>
-							Eye Color: {character.eye_color}
-							<br/>
-							Hair Color: {character.hair_color}
-							</p>
-						</div>
-					</div>
+  return (
+    <>
+      <h1>Characters</h1>
 
-					<div className="d-flex justify-content-between"> 
-						
-						
-							<button className="btn btn-primary" onClick={() => {
-								actions.getSingleCharacter(character.url)
-								console.log(character.url)
-								history.push('/singleCharacter')
-							}}> Learn More!</button>
-						
+      <div className="card-group">
+        {store.characters.map((character, index) => {
+          return (
+            <div className="card m-3" key={index} style={{ width: "40rem" }}>
+              <img
+                src={store.baseImgUrl + "characters/" + (index + 1) + ".jpg"}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title">{character.name}</h5>
+                <div className="card-text">
+                  <p>
+                    Gender: {character.gender}
+                    <br />
+                    Eye Color: {character.eye_color}
+                    <br />
+                    Hair Color: {character.hair_color}
+                  </p>
+                </div>
+              </div>
 
-							<button className="btn btn-warning" onClick= {()=>
-								actions.addFavorites(character)}> 
-						
-								<i className="far fa-heart"></i> 
-							</button>
-					
-					</div>
+              <div className="d-flex justify-content-between">
+                <Link to={"/character/" + index}>
+                  <button className="btn btn-primary"> Learn More!</button>
+                </Link>
 
-				</div>
-	
-				)
-			})}
-		</div>
-	   </>	
-		
-	)}
+                <button
+                  className="btn btn-warning"
+                  onClick={() => actions.addFavorites(character)}
+                >
+                  <i className="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <h1>Planets</h1>
+      <div className="card-group">
+        {store.planets.map((planet, index) => {
+          return (
+            <div className="card m-3" key={index} style={{ width: "40rem" }}>
+              <img
+                src={store.baseImgUrl + "planets/" + (index + 1) + ".jpg"}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title">{planet.name}</h5>
+                <div className="card-text">
+                  <p>
+                    Climate: {planet.climate}
+                    <br />
+                    Gravity: {planet.gravity}
+                    <br />
+                    Terrain: {planet.terrain}
+                    <br />
+                    Population: {planet.population}
+                  </p>
+                </div>
+              </div>
+
+              <div className="d-flex justify-content-between">
+                <Link to={"/planet/" + index}>
+                  <button className="btn btn-primary"> Learn More!</button>
+                </Link>
+
+                <button
+                  className="btn btn-warning"
+                  onClick={() => actions.addFavorites(planet)}
+                >
+                  <i className="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <h1>Starships</h1>
+
+      <div className="card-group">
+        {store.starships.map((starship, index) => {
+          return (
+            <div className="card m-3" key={index} style={{ width: "40rem" }}>
+              <img
+                src={store.baseImgUrl + "starships/" + (index + 1) + ".jpg"}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title">{starship.name}</h5>
+                <div className="card-text">
+                  <p>
+                    Name: {starship.name}
+                    <br />
+                    Model: {starship.model}
+                    <br />
+                    Manufacturer: {starship.manufacturer}
+                    <br />
+                    Starship Class: {starship.starship_class}
+                  </p>
+                </div>
+              </div>
+
+              <div className="d-flex justify-content-between">
+                <Link to={"/character/" + index}>
+                  <button className="btn btn-primary"> Learn More!</button>
+                </Link>
+
+                <button
+                  className="btn btn-warning"
+                  onClick={() => actions.addFavorites(starship)}
+                >
+                  <i className="far fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};

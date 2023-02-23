@@ -7,15 +7,15 @@ export const Navbar = () => {
 	const history = useHistory();
 	console.log(store.singleCharacter)
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-light mb-3 ">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">Star Wars</span>
+				<span className="navbar-brand mb-0 h1 text-danger " >Star Wars <i class="fa-solid fa-jedi"></i> </span>
 			</Link>
 			
 			<div className="ml-auto">
 				<div className="dropdown">
   					<button 
-						className="btn btn-secondary dropdown-toggle" 
+						className="btn btn-secondary dropdown-toggle text-danger " 
 						type="button" id="dropdownMenuButton1" 
 						data-bs-toggle="dropdown" 
 						aria-expanded="false">
@@ -35,7 +35,7 @@ export const Navbar = () => {
 									</p>
 									<button className= "btn btn-danger" 
 									onClick={() => actions.deleteSingleCharacter(index)}> <i className="fa-solid fa-trash-can"> </i>
-									<i className="fas fa-trash"></i>
+									
 									</button>
 						
 								</li>
