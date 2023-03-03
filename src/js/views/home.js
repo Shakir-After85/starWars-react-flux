@@ -33,7 +33,7 @@ export const Home = () => {
               </div>
 
               <div className="d-flex justify-content-between">
-                <Link to={"/character/" + index}>
+                <Link to={"/character/" + (index + 1)}>
                   <button className="btn btn-primary"> Learn More!</button>
                 </Link>
 
@@ -75,7 +75,7 @@ export const Home = () => {
               </div>
 
               <div className="d-flex justify-content-between">
-                <Link to={"/planet/" + index}>
+                <Link to={"/planet/" + (index +1)}>
                   <button className="btn btn-primary"> Learn More!</button>
                 </Link>
 
