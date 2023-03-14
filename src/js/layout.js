@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import {SingleCharacter} from "./views/SingleCharacter.jsx";
 import {SinglePlanet} from "./views/SinglePlanet.jsx";
+import {SingleStarship} from "./views/SingleStarship.jsx";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -28,7 +29,9 @@ const Layout = () => {
 					<Route exact path="/planet/:index">
 							<SinglePlanet/>
 						</Route>
-				
+						<Route exact path="/starship/:index">
+							<SingleStarship/>
+						</Route>
 
 						<Route exact path="/">
 							<Home />

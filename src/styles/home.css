@@ -2,8 +2,7 @@
     flex-wrap: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
-  display: flex;
-  width: 200rem;
+  
   
   
 }
@@ -15,6 +14,7 @@
 .navbar {
   font-family: 'Star Wars', sans-serif;
   font: red;
+  background-color: black;
     
 }
 

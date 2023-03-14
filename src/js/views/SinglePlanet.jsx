@@ -30,7 +30,42 @@ export const SinglePlanet = () => {
                 </div>
                 </div>
             </div>
+
+            <div class="row">
+          <div class="col border-end-2 border border-danger">
+              
+              <h6>Diameter</h6>
+              <p>{planet.diameter}</p>
             </div>
+
+            <div class="col border-end-2 border border-danger">
+              
+              <h6>Climate</h6>
+              <p>{planet.climate}</p>
+            </div>
+
+            <div class="col border-end-2 border border-danger">
+              
+              <h6>Gravity</h6>
+              <p>{planet.gravity }</p>
+            </div>
+            <div class="col border-end-2 border border-danger">
+             
+              <h6>Terrain</h6> 
+              <p>{planet.terrain}</p>
+
+            </div>
+            <div class="col border-end-2 border border-danger">
+              
+              <h6> Surface Water</h6> 
+              <p>{planet.surface_water}</p>
+
+            </div>
+          </div>
+
+            </div>
+
+            
         :
         <Link to='/'>
             <p>Click here to go back to the first page</p>

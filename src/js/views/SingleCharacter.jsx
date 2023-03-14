@@ -32,30 +32,30 @@ export const SingleCharacter = () => {
           </div>
 
           <div class="row">
-          <div class="col border-end-2">
+          <div class="col border-end-2 border border-danger">
               
               <h6>Skin Color</h6>
               <p>{character.skin_color}</p>
             </div>
 
-            <div class="col border-end-2">
+            <div class="col border-end-2 border border-danger">
               
               <h6>Gender</h6>
               <p>{character.gender}</p>
             </div>
 
-            <div class="col border-end-2">
+            <div class="col border-end-2 border border-danger">
               
               <h6>Height</h6>
               <p>{character.height}</p>
             </div>
-            <div class="col border-end-2">
+            <div class="col border-end-2 border border-danger">
              
               <h6>Mass</h6> 
               <p>{character.mass}</p>
 
             </div>
-            <div class="col">
+            <div class="col border-end-2 border border-danger">
               
               <h6>Birth Year </h6> 
               <p>{character.birth_year}</p>

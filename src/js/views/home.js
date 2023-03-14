@@ -10,50 +10,53 @@ export const Home = () => {
     <>
       <h1>Characters</h1>
 
-      <div className="card-group">
+      <div className="card-group row">
         {store.characters.map((character, index) => {
           return (
-            <div className="card m-3" key={index} style={{ width: "40rem" }}>
-              <img
-                src={store.baseImgUrl + "characters/" + (index + 1) + ".jpg"}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">{character.name}</h5>
-                <div className="card-text">
-                  <p>
-                    Gender: {character.gender}
-                    <br />
-                    Eye Color: {character.eye_color}
-                    <br />
-                    Hair Color: {character.hair_color}
-                  </p>
+            <div className="col-3">
+              <div className="card m-3" key={index} style={{ width: "18rem" }}>
+                <img
+                  src={store.baseImgUrl + "characters/" + (index + 1) + ".jpg"}
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{character.name}</h5>
+                  <div className="card-text">
+                    <p>
+                      Gender: {character.gender}
+                      <br />
+                      Eye Color: {character.eye_color}
+                      <br />
+                      Hair Color: {character.hair_color}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="d-flex justify-content-between">
-                <Link to={"/character/" + (index + 1)}>
-                  <button className="btn btn-primary"> Learn More!</button>
-                </Link>
+                <div className="d-flex justify-content-between">
+                  <Link to={"/character/" + (index + 1)}>
+                    <button className="btn btn-primary"> Learn More!</button>
+                  </Link>
 
-                <button
-                  className="btn btn-warning"
-                  onClick={() => actions.addFavorites(character)}
-                >
-                  <i className="far fa-heart"></i>
-                </button>
-              </div>
+                  <button
+                    className="btn btn-warning"
+                    onClick={() => actions.addFavorites(character)}
+                  >
+                    <i className="far fa-heart"></i>
+                  </button>
+                </div>
+              </div>{" "}
             </div>
           );
         })}
       </div>
 
       <h1>Planets</h1>
-      <div className="card-group">
+      <div className="card-group row">
         {store.planets.map((planet, index) => {
           return (
-            <div className="card m-3" key={index} style={{ width: "40rem" }}>
+            <div className="col-3">
+            <div className="card m-3" key={index} style={{ width: "18rem" }}>
               <img
                 src={store.baseImgUrl + "planets/" + (index + 1) + ".jpg"}
                 className="card-img-top"
@@ -75,7 +78,7 @@ export const Home = () => {
               </div>
 
               <div className="d-flex justify-content-between">
-                <Link to={"/planet/" + (index +1)}>
+                <Link to={"/planet/" + (index + 1)}>
                   <button className="btn btn-primary"> Learn More!</button>
                 </Link>
 
@@ -87,16 +90,18 @@ export const Home = () => {
                 </button>
               </div>
             </div>
+            </div>
           );
         })}
       </div>
 
       <h1>Starships</h1>
 
-      <div className="card-group">
+      <div className="card-group row">
         {store.starships.map((starship, index) => {
           return (
-            <div className="card m-3" key={index} style={{ width: "40rem" }}>
+            <div className="col-3">
+            <div className="card m-3" key={index} style={{ width: "18rem" }}>
               <img
                 src={store.baseImgUrl + "starships/" + (index + 1) + ".jpg"}
                 className="card-img-top"
@@ -118,7 +123,7 @@ export const Home = () => {
               </div>
 
               <div className="d-flex justify-content-between">
-                <Link to={"/character/" + index}>
+                <Link to={"/starship/" + index}>
                   <button className="btn btn-primary"> Learn More!</button>
                 </Link>
 
@@ -129,6 +134,7 @@ export const Home = () => {
                   <i className="far fa-heart"></i>
                 </button>
               </div>
+            </div>
             </div>
           );
         })}
